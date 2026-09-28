@@ -28,9 +28,20 @@ These are short snapshots, not a controlled FPS comparison or a completed endura
 
 **A previous boot with the 30 W profile produced a black screen. Its cause remains unresolved.** A later boot with the same profile succeeded, selected numeric 30, and produced the loaded snapshot above. No fix for the black screen is claimed. Missing telemetry also occurred before readings returned; missing readings alone do not establish driver failure.
 
-### Temperature and fan speed
+### Temperature, fan speed and test conditions
 
-The owner reports that temperatures initially fell with the 30 W profile, then rose as fan RPM decreased. The recorded 30 W snapshot shows 71 °C; a later live reading showed 77 °C at 29 W and 99% GPU activity. A higher later temperature should therefore be interpreted alongside fan speed, not as a comparison at fixed cooling. Fan RPM, ambient temperature and a controlled cooling comparison were not logged, so the proposed explanation is an owner observation, not a measured causal result. The later live reading is not included among the archived raw reports.
+The owner's follow-up observations on this particular machine are:
+
+| GPU power setting | Cooling needed / observed | GPU temperature under full GPU load |
+|---|---|---|
+| 35 W | Fans manually raised to approximately 75–90% to keep temperatures from climbing beyond roughly 75 °C | Up to approximately 75 °C with that cooling |
+| 30 W | Fans at approximately 5,000 RPM | Approximately 70 °C |
+
+The owner reports the 30 W result both in macOS and in Windows through Boot Camp, with a thermal modification applied to the laptop and CPU Turbo Boost disabled. The practical benefit reported is lower required fan speed under full GPU load while maintaining about 70 °C. These results describe a modified machine; they should not be presented as stock cooling performance or attributed solely to the GPU profile. The thermal modification's exact construction is not documented here.
+
+**The Windows result uses a separate power-control utility referred to by the owner as “Power Tools”; its exact name, version and settings have not been recorded.** The macOS codeless profile in this repository does not apply a Windows power limit. The two OS results are owner observations, not a controlled cross-platform benchmark.
+
+The archived 30 W snapshot shows 71 °C; a later live reading showed 77 °C at 29 W and 99% GPU activity. These readings are retained as observations at different times, not replaced by the owner's approximate 70 °C result. The owner also observed temperatures rising as fan speed decreased. Synchronized fan RPM/temperature logs, ambient temperature, run duration and fixed-fan comparisons were not archived. Fan percentages cannot be converted to RPM from these records. Thus the cooling comparison is explicitly owner-reported, rather than a measured causal result. The later 77 °C live reading is not included among the archived raw reports.
 
 ## How it works
 
