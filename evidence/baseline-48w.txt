@@ -1,0 +1,49 @@
+=== Radeon 5500M / USB test v2 ===
+понедельник, 28 сентября 2026 г. 00:09:46 (MSK)
+ProductName:		macOS
+ProductVersion:		15.7.9
+BuildVersion:		24G830
+
+=== OpenCore ===
+4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:opencore-version	REL-106-2025-11-03
+
+=== Lilu / WhateverGreen: должны присутствовать обе строки ===
+   57    1 0xffffff8004011000 0x2f000    0x2f000    as.vit9696.Lilu (1.7.1) AE004BE7-2FA9-36BF-AC0A-D40FCCA10FCE <9 7 6 3 2 1>
+   58    0 0xffffff8004040000 0x83000    0x83000    as.vit9696.WhateverGreen (1.6.9) 814DE06B-69EB-3CD8-9F27-143987B41AFD <57 18 9 7 6 3 2 1>
+
+=== Свойства PCI-устройства Radeon ===
++-o GFX0@0  <class IOPCIDevice, id 0x1000003e1, registered, matched, active, busy 0 (2728 ms), retain 25>
+      "CFG_PTPL2_MAX" = 50
+      "compatible" = <"pci106b,20f","pci1002,7340","pciclass,030000","GFX0">
+      "attached-gpu-control-path" = "IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/EGP0@0/IOPP/EGP1@0/IOPP/GFX0@0/AMDRadeonX6000_AmdRadeonControllerNavi14/ATY,Boa@0/AGPM"
+      "CFG_PTPL2_MIN" = 15
+      "CFG_PTPL2_CNT" = 16
+      "acpi-path" = "IOACPIPlane:/_SB/PCI0@0/PEG0@10000/EGP0@0/EGP1@0/GFX0@0"
+      "vendor-id" = <02100000>
+      "device-id" = <40730000>
+      "radeon35-test-version" = <"WEG-v2">
+      "CFG,CFG_PTPL2_MAX" = <23000000>
+
+=== Настройки контроллера, не справочные ATY-профили ===
+  |     "aty_config" = {"CFG_TRANS_WSRV"=Yes,"CFG_UFL_CHK"=No,"CFG_UFL_STP"=No,"CFG_PTPL2_MAX"=<23000000>,"CFG_CORRECT_BLPT"=Yes,"CFG_USE_DPT"=Yes}
+
+=== Показатели Radeon в этот момент ===
+Device Utilization %=76
+Core Clock(MHz)=1279
+Memory Clock(MHz)=1472
+GPU Activity(%)=99
+Temperature(C)=74
+Total Power(W)=48
+Device Utilization %=84
+Core Clock(MHz)=1279
+Memory Clock(MHz)=1472
+GPU Activity(%)=99
+Temperature(C)=74
+Total Power(W)=48
+
+Маркер WEG-v2 и <23000000> подтверждают только доставку настройки.
+Даже CFG_PTPL2_MAX = 35 ещё не доказывает фактический лимит мощности.
+Нужны сравнение под одинаковой нагрузкой и проверка стабильности.
+Отчёт: /Volumes/RADEON35/Radeon5500M-Test/verification-20260928-000946.txt
+
+Нажмите Enter для закрытия.
