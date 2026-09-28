@@ -28,6 +28,10 @@ These are short snapshots, not a controlled FPS comparison or a completed endura
 
 **A previous boot with the 30 W profile produced a black screen. Its cause remains unresolved.** A later boot with the same profile succeeded, selected numeric 30, and produced the loaded snapshot above. No fix for the black screen is claimed. Missing telemetry also occurred before readings returned; missing readings alone do not establish driver failure.
 
+### Temperature and fan speed
+
+The owner reports that temperatures initially fell with the 30 W profile, then rose as fan RPM decreased. The recorded 30 W snapshot shows 71 °C; a later live reading showed 77 °C at 29 W and 99% GPU activity. A higher later temperature should therefore be interpreted alongside fan speed, not as a comparison at fixed cooling. Fan RPM, ambient temperature and a controlled cooling comparison were not logged, so the proposed explanation is an owner observation, not a measured causal result. The later live reading is not included among the archived raw reports.
+
 ## How it works
 
 The generator copies the installed driver's `AMDRadeonNavi14Controller` personality, preserving the native driver identifier and class, and changes five properties:
